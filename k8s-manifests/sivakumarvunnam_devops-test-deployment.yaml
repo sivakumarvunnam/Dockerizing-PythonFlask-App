@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-test-deployment
+  namespace: devops-test
+  labels:
+    app: devops-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops-test
+  template:
+    metadata:
+      labels:
+        app: devops-test
+    spec:
+      containers:
+      - name: flask
+        image: sivakumarvunnam/devops-test:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+          protocol: TCP

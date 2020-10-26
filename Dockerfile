@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3-alpine
 MAINTAINER Sivakumar Vunnam "sivakumarvunnam1@gmail.com"
 COPY . /app
 WORKDIR /app

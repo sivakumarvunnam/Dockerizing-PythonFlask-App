@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-test-service
+  namespace: devops-test
+  labels:
+    app: devops-test
+spec:
+  type: LoadBalancer 
+  ports:
+  - port: 80  # port other pods use to access the Service
+    targetPort: 5000  # port the container accepts traffic on
+    protocol: TCP
+  selector:
+    app: devops-test
